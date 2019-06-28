@@ -74,7 +74,6 @@ optional arguments:
   -q BIOMODELS_QUERY, --biomodels-query BIOMODELS_QUERY
                         Query to be used for BioModels (default: None)
   -s SIZE, --size SIZE  Size of results to be fetched. (default: 100)
-  -p, --publish         Publish after import (default: False)
   -y, --yes             Confirm for all dialogs. (default: False)
   -c, --check           Check for outdated packages. (default: False)
   -i, --interactive     Interactive Mode (default: False)

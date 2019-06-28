@@ -96,7 +96,7 @@ class CCAPI(BaseAPI):
 
             models = _import_models_to_save_models(data, user_id = self.user["id"])
 
-            self.save_model(models)
+            return self.save_model(models)
 
     def save_model(self, model):
         url       = self.build_url("_api", "model", "save")

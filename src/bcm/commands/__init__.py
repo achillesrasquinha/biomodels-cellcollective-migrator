@@ -85,16 +85,15 @@ def command(
 		ccapi = CCAPI(cc_email, cc_password)
 
 		for model in models:
-
 			with tf.TemporaryDirectory() as tempdir:
 				filename = osp.join(tempdir, "%s.sbml" % model["id"])
 
 				with open(filename, "wb") as f:
-					logger.info("Downloading Model %s..." % model["name"])
+					cli.echo(cli_format("Downloading Model %s..." % model["name"], cli.YELLOW))
 
 					for chunk in bmapi.model_download(model["id"], model["filename"]):
 						f.write(chunk)
 
-				logger.info("Importing Model %s..." % model["name"])
+				cli.echo(cli_format("Importing Model %s..." % model["name"], cli.YELLOW))
 				if ccapi.import_model(filename, save = True):
-					cli.echo(cli_format("Model successfully imported.", cli.GREEN))
+					cli.echo(cli_format("Model %s successfully imported." % model["name"], cli.GREEN))

@@ -38,10 +38,6 @@ def get_parser():
         default = 100,
         help    = "Size of results to be fetched."
     )
-    parser.add_argument("-p", "--publish",
-        action  = "store_true",
-        help    = "Publish after import"
-    )
     parser.add_argument("-y", "--yes",
         action  = "store_true",
         help    = "Confirm for all dialogs."
